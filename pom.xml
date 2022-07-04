@@ -2,8 +2,25 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.test.api</groupId>
   <artifactId>workflowwsdl</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0</version>
   <packaging>war</packaging>
+  <name>workflowwsdl</name>
+  
+  	<licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <distribution>repo</distribution>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+        </license>
+    </licenses>
+  
+   <properties>
+   		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <version.surefire.plugin>2.10</version.surefire.plugin>
+        <version.war.plugin>2.1.1</version.war.plugin>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+   </properties>
   
   <dependencies>
   
@@ -14,5 +31,18 @@
 	</dependency>
   
   </dependencies>
+  
+  <build>
+        <finalName>${project.artifactId}</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources/META-INF</directory>
+                <targetPath>META-INF</targetPath>
+                <includes>
+                    <include>*.*</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
   
 </project>
